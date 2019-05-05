@@ -1,37 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-// import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-// import CardActions from '@material-ui/core/CardActions';
-// import Collapse from '@material-ui/core/Collapse';
-// import Avatar from '@material-ui/core/Avatar';
-// import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-// import red from '@material-ui/core/colors/red';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+// eslint-disable-next-line
 const styles = theme => ({
     card: {
         width: 290,
-        height: 560,
+        height: 570,
     },
     cardDescriptionTitle: {
         fontWeight: 'bold',
+        lineHeight: '1.3em',
     },
     media: {
-        height: 310,
+        height: 320,
         width: 223,
     },
     title: {
         fontSize: '1.2rem',
         fontWeight: 500,
+        padding: '0 16px',
     },
 });
 
@@ -58,6 +50,7 @@ const MagicCard = ({
             <CardContent
                 style={{
                     background: `linear-gradient(#FFF, ${gradientColor}, #FFF)`,
+                    padding: '16px 30px',
                 }}
             >
                 <CardMedia
@@ -67,7 +60,11 @@ const MagicCard = ({
                     alt="Academy Researchers"
                 />
             </CardContent>
-            <CardContent>
+            <CardContent
+                style={{
+                    padding: '16px 30px',
+                }}
+            >
                 <p className="cardDescription">
                     <span className={classes.cardDescriptionTitle}>Artist: </span>
                     {artist}

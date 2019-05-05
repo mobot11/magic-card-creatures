@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import CardContainer from '../components/CardContainer';
 import getCards from '../utils/getCards';
+import Loading from '../components/Loading';
 
 class Home extends React.Component {
     constructor() {
@@ -19,7 +20,7 @@ class Home extends React.Component {
         const { initialCards } = this.state;
 
         if (!initialCards.length) {
-            return <div>Please wait while your cards load</div>;
+            return <Loading />;
         }
 
         return (
