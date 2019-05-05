@@ -2,7 +2,18 @@
 
 ## Getting Started
 
-Clone the repo and cd 
+1. run `git clone https://github.com/mobot11/magic-card-creatures.git && cd magic-card-creatures`
+
+2. install dependencies
+`yarn`
+or
+`npm install`
+
+3. run `yarn start` or `npm start`
+
+To run tests, run `yarn test` or `npm test`
+
+For linting, run `yarn lint` or `npm run lint`
 
 ## Tech Stack
 

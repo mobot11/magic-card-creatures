@@ -4,7 +4,18 @@ import Grid from '@material-ui/core/Grid';
 import MagicCard from './MagicCard';
 
 const CardContainer = ({ cards }) => (
-    <Grid container spacing={16} direction="row" justify="center" alignItems="center">
+    <Grid
+        container
+        spacing={16}
+        direction="row"
+        justify="center"
+        alignItems="center"
+        alignContent="center"
+        style={{
+            maxWidth: '1260px',
+            margin: '0 auto',
+        }}
+    >
         {cards.map(card => (
             <Grid key={card.name} item>
                 <MagicCard
@@ -13,6 +24,7 @@ const CardContainer = ({ cards }) => (
                     artist={card.artist}
                     set={card.set}
                     type={card.type}
+                    colors={card.colors}
                 />
             </Grid>
         ))}
