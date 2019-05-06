@@ -64,3 +64,11 @@ The mobile breakpoints are a little wonky when resizing your window. Sometimes t
 ### More unit testing
 
 I am unit testing my API but did not write tests for all the components because of time constraints.
+
+### Add comments
+
+Usually I would add JSDOC blocks to all my functions.
+
+## My project board
+
+[board on trello](https://trello.com/b/YdinHMx2/highspot-coding-exercise)

@@ -39,9 +39,11 @@ class Home extends React.Component {
     }
 
     removeDuplicates = (cards) => {
+        // eslint-disable-next-line
         let names = {};
-
+        // eslint-disable-next-line
         return cards.filter((card) => {
+            // eslint-disable-next-line
             let { name } = card;
             if (!names[name]) {
                 names[name] = 1;
