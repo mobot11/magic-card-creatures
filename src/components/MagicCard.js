@@ -10,7 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 const styles = theme => ({
     card: {
         width: 290,
-        height: 570,
+        height: 585,
     },
     cardDescriptionTitle: {
         fontWeight: 'bold',

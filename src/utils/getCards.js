@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 
-const getCards = async (pageSize = 20, page = 1) => {
+const getCards = async (pageSize = 20, page = 1, orderBy) => {
     try {
-        const data = await fetch(`https://api.magicthegathering.io/v1/cards?type=creature&pageSize=${pageSize}&page=${page}&contains=imageUrl`);
+        const data = await fetch(`https://api.magicthegathering.io/v1/cards?type=creature&pageSize=${pageSize}&page=${page}&contains=imageUrl&orderBy=${orderBy}`);
         const jsonData = await data.json();
         const { cards } = jsonData;
 

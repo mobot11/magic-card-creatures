@@ -1,3 +1,34 @@
 body {
   background-color: #EEEEEE;
 }
+
+.header-toolbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: 'space-between';
+}
+
+.logo-container .logo-copy {
+  padding-top: 5px;
+}
+
+.toolbar {
+  max-width: 1260px;
+}
+
+@media screen and (max-width: 900px) {
+  .search-box {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .filter-cards {
+    display: none;
+  }
+}

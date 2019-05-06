@@ -47,3 +47,16 @@ The api doesn't work exactly as expected. I would expect adding `contains='image
 
 I relied pretty heavily on the Material UI styles, and while they are mostly good, there are a few adjustments I'd like to make that I didn't have time for.
 
+### Add filtering on different types of cards
+
+This feature would be easy to add but I didn't have time to implement.
+
+### Debug infinite-scroller library
+
+It is throwing a warning about a key prop that I wasn't able to track down.
+
+### CSS knits
+
+The header component needs some work, instead of dealing with all the different breakpoints, I am hiding the search and filter.
+
+The mobile breakpoints are a little wonky when resizing your window. Sometimes the cards don't center on small screens.
