@@ -49,7 +49,7 @@ const styles = theme => ({
     },
 });
 
-const Header = ({ classes, onSearchChange }) => {
+const Header = ({ classes, onSearchChange, onSortChange }) => {
     // eslint-disable-next-line
     const { windowWidth } = window;
     return (
@@ -86,7 +86,7 @@ const Header = ({ classes, onSearchChange }) => {
                             }}
                         />
                     </div>
-                    <Sort />
+                    <Sort onChange={onSortChange} />
                 </Grid>
             </Toolbar>
         </AppBar>
@@ -96,11 +96,8 @@ const Header = ({ classes, onSearchChange }) => {
 Header.propTypes = {
     // eslint-disable-next-line
     classes: PropTypes.object,
-    onSearchChange: PropTypes.func,
-};
-
-Header.defaultProps = {
-    onSearchChange: PropTypes.func,
+    onSearchChange: PropTypes.func.isRequired,
+    onSortChange: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Header);

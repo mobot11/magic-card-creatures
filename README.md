@@ -60,3 +60,7 @@ It is throwing a warning about a key prop that I wasn't able to track down.
 The header component needs some work, instead of dealing with all the different breakpoints, I am hiding the search and filter.
 
 The mobile breakpoints are a little wonky when resizing your window. Sometimes the cards don't center on small screens.
+
+### More unit testing
+
+I am unit testing my API but did not write tests for all the components because of time constraints.

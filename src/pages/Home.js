@@ -74,7 +74,7 @@ class Home extends React.Component {
         if (!cards.length) {
             return (
                 <React.Fragment>
-                    <Header onSearchChange={this.onSearchChange} />
+                    <Header onSortChange={this.onSortChange} onSearchChange={this.onSearchChange} />
                     <Loading />
                 </React.Fragment>
             );
@@ -92,7 +92,10 @@ class Home extends React.Component {
 
         if (!includedCards.length) {
             return (
-                <div>No Results found.</div>
+                <Grid container>
+                    <Header onChange={this.onSortChange} onSearchChange={this.onSearchChange} />
+                    <div>No Results found.</div>
+                </Grid>
             );
         }
 
@@ -100,7 +103,7 @@ class Home extends React.Component {
 
         return (
             <Grid container>
-                <Header onChange={this.onSortChange} onSearchChange={this.onSearchChange} />
+                <Header onSortChange={this.onSortChange} onSearchChange={this.onSearchChange} />
                 <Grid item xs={12}>
                     <CardContainer
                         cards={orderedCards}

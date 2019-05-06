@@ -21,9 +21,9 @@ class Sort extends React.Component {
 
     handleChange = (event) => {
         const { onChange } = this.props;
-        this.setState({ [event.target.name]: event.target.value });
 
         onChange(event.target.value);
+        this.setState({ [event.target.name]: event.target.value });
     };
 
     handleClose = () => {
@@ -36,6 +36,8 @@ class Sort extends React.Component {
 
     render() {
         const { classes } = this.props;
+
+
         const { open, sortBy } = this.state;
 
         return (
@@ -67,11 +69,8 @@ class Sort extends React.Component {
 Sort.propTypes = {
     // eslint-disable-next-line
     classes: PropTypes.object.isRequired,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
 };
 
-Sort.defaultProps = {
-    onChange: () => {},
-};
 
 export default withStyles(styles)(Sort);
