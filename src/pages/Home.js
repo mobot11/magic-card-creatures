@@ -20,31 +20,50 @@ class Home extends React.Component {
     async componentDidMount() {
         const { orderBy } = this.state;
         const cards = await getCards(20, 1, orderBy);
-
-        this.setState({ cards });
+        const uniqueCards = this.removeDuplicates(cards);
+        this.setState({ cards: uniqueCards });
     }
 
-    orderCards = (cards, orderBy) => cards.sort((a, b) => {
-        if (a[orderBy] < b[orderBy]) {
-            return -1;
-        }
-        if (a[orderBy] > b[orderBy]) {
-            return 1;
-        }
-        return 0;
-    });
+    orderCards = (cards, orderBy) => {
+        const orderedCards = cards.sort((a, b) => {
+            if (a[orderBy] < b[orderBy]) {
+                return -1;
+            }
+            if (a[orderBy] > b[orderBy]) {
+                return 1;
+            }
+            return 0;
+        });
+
+        return this.removeDuplicates(orderedCards);
+    }
+
+    removeDuplicates = (cards) => {
+        let names = {};
+
+        return cards.filter((card) => {
+            let { name } = card;
+            if (!names[name]) {
+                names[name] = 1;
+                return card;
+            }
+        });
+    }
 
     getMoreCards = () => {
-        const { page, orderBy } = this.state;
+        const { page, orderBy, cards } = this.state;
         const nextPage = page + 1;
         getCards(20, page, orderBy)
-            .then((cards) => {
-                if (!cards.length) {
+            .then((newCards) => {
+                if (!newCards.length) {
                     this.setState({
                         hasMoreItems: false,
                     });
                 } else {
-                    const orderedCards = this.orderCards(cards, orderBy);
+                    const orderedCards = this.orderCards(
+                        [...cards, ...newCards],
+                        orderBy,
+                    );
                     this.setState({
                         cards: orderedCards,
                         page: nextPage,

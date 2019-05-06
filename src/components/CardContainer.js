@@ -9,7 +9,7 @@ const CardContainer = ({ cards, getMoreCards, hasMoreItems }) => {
     // eslint-disable-next-line
     const windowWidth = window.innerWidth;
     const magicCards = cards.map(card => (
-        <Grid key={card.id} item>
+        <Grid key={`${card.id}`} item>
             <MagicCard
                 key={card.id}
                 image={card.imageUrl}
@@ -32,13 +32,14 @@ const CardContainer = ({ cards, getMoreCards, hasMoreItems }) => {
                 container
                 spacing={16}
                 direction="row"
-                justify={windowWidth < 900 ? 'center' : 'flex-start'}
+                justify="flex-start"
                 alignItems="center"
                 alignContent="center"
                 style={{
                     maxWidth: '1260px',
                     margin: '0 auto',
                 }}
+                className="card-grid"
             >
                 {magicCards}
             </Grid>

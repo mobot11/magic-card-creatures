@@ -37,13 +37,14 @@ class Sort extends React.Component {
     render() {
         const { classes } = this.props;
 
-
         const { open, sortBy } = this.state;
 
         return (
             <form autoComplete="off" className="filter-cards">
                 <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="sort-by">Sort</InputLabel>
+                    <InputLabel style={{ color: 'black' }} htmlFor="sort-by">
+                        Sort
+                    </InputLabel>
                     <Select
                         open={open}
                         onClose={this.handleClose}
@@ -53,6 +54,9 @@ class Sort extends React.Component {
                         inputProps={{
                             name: 'sortBy',
                             id: 'sort-by',
+                        }}
+                        style={{
+                            backgroundColor: 'white',
                         }}
                     >
                         <MenuItem value="name">Name</MenuItem>
@@ -71,6 +75,5 @@ Sort.propTypes = {
     classes: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
 };
-
 
 export default withStyles(styles)(Sort);
