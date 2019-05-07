@@ -27,8 +27,11 @@ body {
   }
 }
 
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 600px) {
   .filter-cards {
     display: none;
+  }
+  .card-grid {
+    justify-content: center;
   }
 }
