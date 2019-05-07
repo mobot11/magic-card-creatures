@@ -15,6 +15,8 @@ To run tests, run `yarn test` or `npm test`
 
 For linting, run `yarn lint` or `npm run lint`
 
+Can be seen live at https://youthful-panini-28b26b.netlify.com/
+
 ## Tech Stack
 
 ### React with Create React App
