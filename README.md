@@ -61,6 +61,8 @@ The header component needs some work, instead of dealing with all the different 
 
 The mobile breakpoints are a little wonky when resizing your window. Sometimes the cards don't center on small screens.
 
+Need more styling on the no results page.
+
 ### More unit testing
 
 I am unit testing my API but did not write tests for all the components because of time constraints.
