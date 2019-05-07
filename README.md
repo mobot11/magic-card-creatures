@@ -43,7 +43,7 @@ I had never used material ui before but wanted to spend the least amount of time
 
 ### Dig deeper into the magic API
 
-The api doesn't work exactly as expected. I would expect adding `contains='imageUrl'` to only return cards with valid imageUrls. However, this did not seem to be the case. In the mean time I fetch the first 20 creature cards, but only display ones with images. Although this does not meet the requirements exactly, I figure displaying cards that contain images is the most important feature.
+The api doesn't work exactly as expected. I would expect adding `contains='imageUrl'` to only return cards with valid imageUrls. However, this did not seem to be the case. In the mean time I fetch the first 20 creature cards, but only display ones with images. Although this does not meet the requirements exactly, I figure displaying cards that contain images is the most important feature. I also excluded duplicates which reduces the amount of cards loaded.
 
 ### Adjust styles
 
