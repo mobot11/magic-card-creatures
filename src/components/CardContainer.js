@@ -22,12 +22,12 @@ const CardContainer = ({ cards, getMoreCards, hasMoreItems }) => {
         </Grid>
     ));
     return (
-        <InfiniteScroll
-            pageStart={0}
-            loadMore={getMoreCards}
-            hasMore={hasMoreItems}
-            loader={<Loading />}
-        >
+        // <InfiniteScroll
+        //     pageStart={0}
+        //     loadMore={getMoreCards}
+        //     hasMore={hasMoreItems}
+        //     loader={<Loading />}
+        // >
             <Grid
                 container
                 spacing={16}
@@ -43,7 +43,7 @@ const CardContainer = ({ cards, getMoreCards, hasMoreItems }) => {
             >
                 {magicCards}
             </Grid>
-        </InfiniteScroll>
+        // </InfiniteScroll>
     );
 };
 
@@ -51,8 +51,8 @@ CardContainer.propTypes = {
     cards: PropTypes.arrayOf(
         PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number]),
     ),
-    getMoreCards: PropTypes.func.isRequired,
-    hasMoreItems: PropTypes.bool.isRequired,
+    // getMoreCards: PropTypes.func.isRequired,
+    // hasMoreItems: PropTypes.bool.isRequired,
 
 };
 

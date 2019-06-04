@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
-import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import Sort from './Sort';
+import Search from './Search';
 import logo from '../assets/magic-logo.jpg';
 import '../App.css';
 
@@ -49,7 +49,7 @@ const styles = theme => ({
     },
 });
 
-const Header = ({ classes, onSearchChange, onSortChange }) => {
+const Header = ({ classes }) => {
     // eslint-disable-next-line
     const { windowWidth } = window;
     return (
@@ -68,25 +68,21 @@ const Header = ({ classes, onSearchChange, onSortChange }) => {
                             src={logo}
                             className={`${classes.avatar} ${classes.logo}`}
                         />
-                        <Typography variant="h6" color="inherit" component="h1" className="logo-copy">
+                        <Typography
+                            variant="h6"
+                            color="inherit"
+                            component="h1"
+                            className="logo-copy"
+                        >
                             Digital Magic (Cards)
                         </Typography>
                     </div>
-                    <div className={`${classes.search} search-box`}>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            onChange={onSearchChange}
-                            style={{
-                                width: '300px',
-                                backgroundColor: 'white',
-                            }}
-                        />
-                    </div>
-                    <Sort onChange={onSortChange} />
+                    <Search
+                        searchClasses={classes.search}
+                        inputRootClasses={classes.inputRoot}
+                        inputInputClasses={classes.inputInput}
+                    />
+                    <Sort />
                 </Grid>
             </Toolbar>
         </AppBar>
@@ -96,8 +92,6 @@ const Header = ({ classes, onSearchChange, onSortChange }) => {
 Header.propTypes = {
     // eslint-disable-next-line
     classes: PropTypes.object,
-    onSearchChange: PropTypes.func.isRequired,
-    onSortChange: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Header);
