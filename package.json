@@ -11,7 +11,7 @@
     "@material-ui/icons": "^3.0.2",
     "babel-jest": "24.7.1",
     "classnames": "^2.2.6",
-    "node-fetch": "^2.5.0",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
